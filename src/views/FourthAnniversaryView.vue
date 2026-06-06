@@ -287,8 +287,11 @@ function toggleLyrics() {
 
 function updateLyric(t: number) {
   let idx = -1
+
+  
   for (let i = 0; i < lyricData.length; i++) {
-    if (t >= lyricData[i][0] && t < lyricData[i][1]) {
+    const item = lyricData[i]!
+    if (t >= item[0] && t < item[1]) {
       idx = i
       break
     }
@@ -300,11 +303,12 @@ function updateLyric(t: number) {
 }
 
 function setLyricHTML(idx: number) {
+
   if (idx < 0) {
     lyricsLineHTML.value = ''
     return
   }
-  let text = lyricsMode.value === 'jp' ? lyricData[idx][2] : lyricData[idx][3]
+  let text = lyricsMode.value === 'jp' ? lyricData[idx]![2] : lyricData[idx]![3]
   text = text.replace(/(39)/g, '<span class="hl">$1</span>')
   text = text.replace(/(ありがとう)/g, '<span class="hl">$1</span>')
   lyricsLineHTML.value = text
