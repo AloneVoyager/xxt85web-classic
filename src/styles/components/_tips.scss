@@ -1,0 +1,7 @@
+.tips {
+  @include tips-gradient;
+  border: 1px solid $border-gray;
+  border-radius: $radius-tips;
+  padding: 8px;
+  margin-bottom: 4px;
+}

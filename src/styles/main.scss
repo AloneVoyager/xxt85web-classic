@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@import 'base';
+@import 'components/titlebar';
+@import 'components/navbar';
+@import 'components/layout';
+@import 'components/window';
+@import 'components/tips';
+@import 'components/footer';
+@import 'components/wmp';
+@import 'components/preview-box';
+@import 'components/progress';
+@import 'components/search';
+@import 'components/dialog';
+@import 'components/video-list';

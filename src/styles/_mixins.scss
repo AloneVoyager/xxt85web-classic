@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+@mixin titlebar-gradient {
+  background: linear-gradient(to bottom, $titlebar-gray1 0%, $titlebar-gray2 50%, $titlebar-gray3 51%, $titlebar-gray4 100%);
+}
+
+@mixin navbar-gradient {
+  background: linear-gradient(to bottom, $navbar-gray1 0%, $navbar-gray2 30%, $navbar-gray3 31%, $navbar-gray4 100%);
+}
+
+@mixin tips-gradient {
+  background: linear-gradient(to bottom, $bg-tips-top 0%, $bg-tips-bottom 100%);
+}
+
+@mixin window-shadow {
+  box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xxtsoft · 404</title>
+    <script type="text/javascript">
+        (function() {
+            var path = window.location.pathname;
+            var hash = window.location.hash;
+            
+            var basePath = '/xxt85web-classic/';
+            
+            // Remove base path from path
+            if (path.startsWith(basePath)) {
+                path = path.substring(basePath.length);
+            }
+            
+            // If already has hash, redirect to index.html
+            if (hash) {
+                window.location.replace(basePath + 'index.html' + hash);
+            } else {
+                // Redirect with path as hash for SPA routing
+                window.location.replace(basePath + 'index.html#' + path);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <p>Loading...</p>
+</body>
+</html>

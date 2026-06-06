@@ -1,0 +1,28 @@
+.progress-item {
+  margin-bottom: 10px;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+.vista-progress-track {
+  height: 14px;
+  border-width: 0 2px;
+  border-style: solid;
+  border-image: url('/static/bg.png') 0 2 fill stretch;
+  display: block;
+  overflow: hidden;
+}
+
+.vista-progress-fill {
+  height: 100%;
+  min-width: 4px;
+  border-width: 0 2px;
+  border-style: solid;
+  border-image: url('/static/fill.png') 0 4 fill stretch;
+  transition: width 0.4s cubic-bezier(0.1, 0.7, 0.1, 1);
+}

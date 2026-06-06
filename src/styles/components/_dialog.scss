@@ -1,0 +1,52 @@
+.vista-dialog {
+  background: $dialog-bg !important;
+  border: 1px solid $dialog-border !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) !important;
+  border-radius: $radius-base;
+
+  .window-titlebar {
+    background: linear-gradient(to bottom, #98B4D0 0%, #B9D1EA 100%) !important;
+    color: #000;
+    font-weight: normal;
+  }
+
+  button {
+    background: linear-gradient(to bottom, #f2f2f2, #ebebeb 50%, #dddddd 51%, #cfcfcf);
+    border: 1px solid #707070;
+    border-radius: $radius-base;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #3c7fb1;
+      background: linear-gradient(to bottom, #e9f5ff, #d8eaff 50%, #c4e0ff 51%, #b3d5ff);
+    }
+  }
+}
+
+.vista-close-btn {
+  float: right;
+  cursor: pointer;
+  width: 28px;
+  height: 17px;
+  margin-top: 1px;
+  margin-right: 2px;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+
+  &:active {
+    filter: brightness(0.8);
+  }
+}
+
+.window-titlebar {
+  .settings-titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 8px !important;
+    height: 25px;
+  }
+}

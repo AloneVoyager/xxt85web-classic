@@ -1,0 +1,15 @@
+.content {
+  padding: 15px 0;
+  overflow: hidden;
+}
+
+.main {
+  float: left;
+  width: $main-width;
+  font-size: $base-font-size;
+}
+
+.sidebar {
+  float: right;
+  width: $sidebar-width;
+}
