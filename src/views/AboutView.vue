@@ -16,11 +16,12 @@ import FooterBar from '../components/FooterBar.vue'
       <h2><span style="color: #003399">关于</span></h2>
 
       <div style="margin: 12px 0;">
-        <a href="#" style="margin-right: 8px;">Vue 3.4+</a>
-        <a href="#" style="margin-right: 8px;">TypeScript 5.0+</a>
-        <a href="#" style="margin-right: 8px;">Vite 5.0+</a>
-        <a href="#" style="margin-right: 8px;">SCSS</a>
-        <a href="#">MIT License</a>
+        <img src="https://img.shields.io/github/last-commit/AloneVoyager/xxt85web-classic?color=orange&label=上次更新" alt="上次更新" style="margin-right: 4px;" />
+        <img src="https://img.shields.io/badge/Vue-3.0+-41B883.svg?logo=Vue.js&logoColor=white" alt="Vue" style="margin-right: 4px;" />
+        <img src="https://img.shields.io/badge/TypeScript-5.0+-3178C6.svg?logo=TypeScript&logoColor=white" alt="TypeScript" style="margin-right: 4px;" />
+        <img src="https://img.shields.io/badge/Vite-5.0+-9135FF.svg?logo=Vite&logoColor=white" alt="Vite" style="margin-right: 4px;" />
+        <img src="https://img.shields.io/badge/SCSS-C6538C.svg?logo=Sass&logoColor=white" alt="SCSS" style="margin-right: 4px;" />
+        <img src="https://img.shields.io/badge/HTML5-E34F26.svg?logo=HTML5&logoColor=white" alt="HTML5" style="margin-right: 4px;" />
       </div>
 
       <p>这是一个 Vue3 示例站点，旨在展示如何提取和复用 xxt85web 的基础样式。</p>
@@ -29,9 +30,8 @@ import FooterBar from '../components/FooterBar.vue'
       <WindowPanel title="项目信息">
         <h3>关于本项目</h3>
         <ul>
-          <li><b>项目名称：</b>xxt85web-style-vue3</li>
-          <li><b>源码仓库：</b><a href="#">GitHub 链接</a></li>
-          <li><b>在线预览：</b><a href="#">示例站点</a></li>
+          <li><b>项目名称：</b>xxt85web-classic</li>
+          <li><b>源码仓库：</b><a href="https://github.com/AloneVoyager/xxt85web-classic" target="_blank">GitHub 链接</a></li>
         </ul>
 
         <h3>技术栈</h3>
@@ -82,7 +82,7 @@ import FooterBar from '../components/FooterBar.vue'
           <li>TypeScript 类型支持</li>
           <li>SCSS 样式模块化</li>
           <li>响应式布局适配</li>
-          <li>Vista/Aero 风格设计</li>
+          <li>Frutiger Aero 风格设计</li>
         </ul>
       </WindowPanel>
 

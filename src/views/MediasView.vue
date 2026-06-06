@@ -19,6 +19,8 @@ interface Video {
   hasBilibili?: boolean
 }
 
+const baseUrl = import.meta.env.BASE_URL
+
 const videos: Video[] = [
   {
     title: 'Mission Impossible : The Long Dark Basement - 碟中谍9：永夜堡垒',
@@ -139,7 +141,7 @@ const videos: Video[] = [
         <div v-for="(video, idx) in videos" :key="idx" class="video-item">
           <a href="#">
             <div class="video-thumb">
-              <img :src="video.cover" :alt="video.title" />
+              <img :src="baseUrl + video.cover.replace(/^\//, '')" :alt="video.title" />
               <div :class="video.isFlash ? 'flash-play-icon' : 'play-icon'"></div>
               <div class="video-duration">{{ video.duration }}</div>
             </div>

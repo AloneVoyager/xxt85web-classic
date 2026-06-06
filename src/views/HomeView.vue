@@ -10,29 +10,18 @@ import TipsPanel from '../components/TipsPanel.vue'
 import FooterBar from '../components/FooterBar.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import WMPPlayer from '../components/WMPPlayer.vue'
+import AeroWebring from '../components/AeroWebring.vue'
 import SettingsDialog from '../components/SettingsDialog.vue'
 
 // 示例文章列表
 const articles = [
+  { title: '🎉 xxtsoft 四周年纪念', id: '4thanniversary', isSpecial: true },
   { title: 'Vue3 Composition API 入门指南', id: 'vue3-composition-api' },
   { title: 'TypeScript 实用技巧', id: 'typescript-tips' },
   { title: 'SCSS 最佳实践指南', id: 'scss-best-practices' },
 ]
 
-// 示例歌曲列表
-const songs = [
-  { title: '神のまにまに', author: '初音ミク/GUMI/鏡音リン', cover: '/music/kaminomanimani.png' },
-  { title: 'お砂糖哀歌', author: 'MIMI/初音ミク', cover: '/music/osatouaika.jpg' },
-  { title: "I Can't Wait", author: 'd0tc0mmie/GUMI', cover: '/music/icantwait.jpg' },
-  { title: 'ロストワンの号哭', author: 'Neru/鏡音リン', cover: '/music/lostone.jpg' },
-]
-
-const currentSongIndex = ref(0)
 const dialogVisible = ref(false)
-
-function onSongPlay(index: number) {
-  currentSongIndex.value = index
-}
 
 function openDialog() {
   dialogVisible.value = true
@@ -48,7 +37,7 @@ function openDialog() {
     <template #main>
       <h2><span style="color: #003399">示例首页</span></h2>
       <p>这是一个基于 Vue3 + TypeScript + SCSS 构建的示例站点</p>
-      <p>本页面的样式提取自 <a href="https://xxtsoft.top" target="_blank">xxtsoft.top</a>，使用 Vista/Aero 风格的设计元素</p>
+      <p>本页面的样式提取自 <a href="https://xxtsoft.top" target="_blank">xxtsoft.top</a>，使用 <a href="https://frutigeraeroarchive.org/" target="_blank">Frutiger Aero</a> 风格的设计元素</p>
 
       <TipsPanel>
         <p><b>样式来源说明</b></p>
@@ -69,7 +58,12 @@ function openDialog() {
         <h3>最新文章</h3>
         <ul>
           <li v-for="(art, idx) in articles" :key="idx">
-            <RouterLink :to="`/article/${art.id}`">{{ art.title }}</RouterLink>
+            <template v-if="(art as any).isSpecial">
+              <RouterLink to="/4thanniversary">{{ art.title }}</RouterLink>
+            </template>
+            <template v-else>
+              <RouterLink :to="`/article/${art.id}`">{{ art.title }}</RouterLink>
+            </template>
           </li>
         </ul>
 
@@ -125,7 +119,12 @@ function openDialog() {
       </WindowPanel>
 
       <WindowPanel title="Windows Media Player">
-        <WMPPlayer :songs="songs" :currentIndex="currentSongIndex" @play="onSongPlay" />
+        <WMPPlayer />
+      </WindowPanel>
+
+      <WindowPanel title="Aero Webring 小组件">
+        <p>由于本站点是示例站点，因此本小组件仅做样式展示。</p>
+        <AeroWebring />
       </WindowPanel>
     </template>
   </ContentLayout>

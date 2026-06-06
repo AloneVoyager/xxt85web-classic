@@ -23,6 +23,7 @@ const article = ref<Article | null>(null)
 const loading = ref(true)
 const notFound = ref(false)
 
+const baseUrl = import.meta.env.BASE_URL
 const articleId = computed(() => route.params.id as string)
 
 async function loadArticle() {
@@ -30,7 +31,6 @@ async function loadArticle() {
   notFound.value = false
   
   try {
-    const baseUrl = import.meta.env.BASE_URL
     const response = await fetch(`${baseUrl}data/articles.json`)
     const articles: Article[] = await response.json()
     
@@ -83,7 +83,7 @@ onMounted(() => {
     <template v-else-if="article">
       <!-- 顶部图片 -->
       <div class="article-header-image">
-        <img :src="article.headerImage" :alt="article.title">
+        <img :src="baseUrl + article.headerImage.replace(/^\//, '')" :alt="article.title">
         <div class="article-title-overlay">
           <h1>{{ article.title }}</h1>
         </div>
