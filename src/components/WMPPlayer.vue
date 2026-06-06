@@ -266,7 +266,7 @@ const coverSrc = computed(() => {
 })
 
 function initAudio() {
-  if (audioRef.value) {
+  if (audioRef.value && currentSong.value) {
     audioRef.value.src = `${baseUrl}${currentSong.value.url}`
     audioRef.value.load()
   }
@@ -274,7 +274,7 @@ function initAudio() {
 
 function playSong(index: number) {
   currentIndex.value = index
-  if (audioRef.value) {
+  if (audioRef.value && currentSong.value) {
     audioRef.value.src = `${baseUrl}${currentSong.value.url}?v=${Math.random()}`
     audioRef.value.load()
     audioRef.value.play()
@@ -321,8 +321,9 @@ function updateLyric() {
   const lrc = currentSong.value.lrc
 
   for (let i = lrc.length - 1; i >= 0; i--) {
-    if (currentTime >= lrc[i].t) {
-      currentLyric.value = lrc[i].c
+    const line = lrc[i]
+    if (line && currentTime >= line.t) {
+      currentLyric.value = line.c
       return
     }
   }
