@@ -4,6 +4,7 @@ import SearchView from '../views/SearchView.vue'
 import DownloadsView from '../views/DownloadsView.vue'
 import MediasView from '../views/MediasView.vue'
 import AboutView from '../views/AboutView.vue'
+import ArticleView from '../views/ArticleView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 
 const router = createRouter({
@@ -33,6 +34,11 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutView,
+    },
+    {
+      path: '/article/:id',
+      name: 'article',
+      component: ArticleView,
     },
     {
       path: '/:pathMatch(.*)*',

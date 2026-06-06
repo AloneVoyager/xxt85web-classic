@@ -1,0 +1,205 @@
+[
+  {
+    "id": "vue3-composition-api",
+    "title": "Vue3 Composition API 入门指南",
+    "author": "示例作者",
+    "date": "2025年1月15日",
+    "headerImage": "/articles/vista.webp",
+    "content": [
+      {
+        "type": "h2",
+        "text": "什么是 Composition API"
+      },
+      {
+        "type": "p",
+        "text": "Composition API 是 Vue3 中引入的一种新的编写组件逻辑的方式。它允许我们使用函数来组织代码，而不是依赖于选项式 API（Options API）中的 data、methods、computed 等选项。"
+      },
+      {
+        "type": "h2",
+        "text": "为什么使用 Composition API"
+      },
+      {
+        "type": "h3",
+        "text": "更好的逻辑复用"
+      },
+      {
+        "type": "p",
+        "text": "通过组合函数（Composables），我们可以轻松地在多个组件之间复用逻辑代码，而不需要依赖 mixins 或高阶组件。"
+      },
+      {
+        "type": "h3",
+        "text": "更好的类型推断"
+      },
+      {
+        "type": "p",
+        "text": "Composition API 与 TypeScript 配合更加自然，不需要额外的类型声明即可获得完整的类型推断支持。"
+      },
+      {
+        "type": "h2",
+        "text": "基础示例"
+      },
+      {
+        "type": "p",
+        "text": "下面是一个简单的计数器示例："
+      },
+      {
+        "type": "code",
+        "text": "import { ref } from 'vue'\n\nconst count = ref(0)\nconst increment = () => {\n  count.value++\n}"
+      },
+      {
+        "type": "p",
+        "text": "使用 ref 创建响应式数据，通过 .value 访问和修改其值。"
+      },
+      {
+        "type": "h2",
+        "text": "总结"
+      },
+      {
+        "type": "p",
+        "text": "Composition API 为 Vue 开发带来了更灵活的代码组织方式，特别适合大型项目和 TypeScript 用户。建议在新项目中尝试使用。"
+      }
+    ]
+  },
+  {
+    "id": "typescript-tips",
+    "title": "TypeScript 实用技巧",
+    "author": "示例作者",
+    "date": "2025年2月20日",
+    "headerImage": "/articles/vista.webp",
+    "content": [
+      {
+        "type": "h2",
+        "text": "类型推断"
+      },
+      {
+        "type": "p",
+        "text": "TypeScript 拥有强大的类型推断能力。很多时候你不需要显式声明类型，编译器会自动推断。"
+      },
+      {
+        "type": "code",
+        "text": "let name = 'Alice' // 自动推断为 string 类型\nlet age = 25 // 自动推断为 number 类型"
+      },
+      {
+        "type": "h2",
+        "text": "联合类型"
+      },
+      {
+        "type": "p",
+        "text": "联合类型允许一个值可以是多种类型之一："
+      },
+      {
+        "type": "code",
+        "text": "type Status = 'pending' | 'approved' | 'rejected'\n\nfunction updateStatus(status: Status) {\n  // ...\n}"
+      },
+      {
+        "type": "h2",
+        "text": "泛型"
+      },
+      {
+        "type": "p",
+        "text": "泛型让我们能够编写可复用的组件："
+      },
+      {
+        "type": "code",
+        "text": "function identity<T>(arg: T): T {\n  return arg\n}\n\nconst result = identity<string>('hello')"
+      },
+      {
+        "type": "h2",
+        "text": "实用工具类型"
+      },
+      {
+        "type": "p",
+        "text": "TypeScript 提供了许多内置的工具类型："
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Partial<T> - 将所有属性变为可选",
+          "Required<T> - 将所有属性变为必选",
+          "Readonly<T> - 将所有属性变为只读",
+          "Pick<T, K> - 选取指定属性",
+          "Omit<T, K> - 排除指定属性"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "总结"
+      },
+      {
+        "type": "p",
+        "text": "掌握 TypeScript 的这些技巧，可以让你的代码更加健壮和易于维护。"
+      }
+    ]
+  },
+  {
+    "id": "scss-best-practices",
+    "title": "SCSS 最佳实践指南",
+    "author": "示例作者",
+    "date": "2025年3月10日",
+    "headerImage": "/articles/vista.webp",
+    "content": [
+      {
+        "type": "h2",
+        "text": "变量管理"
+      },
+      {
+        "type": "p",
+        "text": "使用变量来管理颜色、字体、间距等设计令牌："
+      },
+      {
+        "type": "code",
+        "text": "$primary-color: #003399;\n$font-size-base: 16px;\n$spacing-unit: 8px;"
+      },
+      {
+        "type": "h2",
+        "text": "嵌套规则"
+      },
+      {
+        "type": "p",
+        "text": "SCSS 允许嵌套选择器，但要注意不要过度嵌套："
+      },
+      {
+        "type": "code",
+        "text": ".card {\n  padding: 16px;\n  \n  &-title {\n    font-size: 20px;\n  }\n  \n  &:hover {\n    box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n  }\n}"
+      },
+      {
+        "type": "h2",
+        "text": "Mixin 复用"
+      },
+      {
+        "type": "p",
+        "text": "使用 mixin 来复用样式代码："
+      },
+      {
+        "type": "code",
+        "text": "@mixin flex-center {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.container {\n  @include flex-center;\n}"
+      },
+      {
+        "type": "h2",
+        "text": "模块化组织"
+      },
+      {
+        "type": "p",
+        "text": "建议的文件组织结构："
+      },
+      {
+        "type": "ul",
+        "items": [
+          "_variables.scss - 变量定义",
+          "_mixins.scss - 混入定义",
+          "_base.scss - 基础样式",
+          "components/ - 组件样式",
+          "main.scss - 主入口文件"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "总结"
+      },
+      {
+        "type": "p",
+        "text": "遵循这些最佳实践，可以让你的 SCSS 代码更加清晰、可维护。"
+      }
+    ]
+  }
+]

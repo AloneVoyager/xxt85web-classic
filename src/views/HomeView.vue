@@ -14,12 +14,9 @@ import SettingsDialog from '../components/SettingsDialog.vue'
 
 // 示例文章列表
 const articles = [
-  { title: 'Vue3 组件化开发实战', href: '#' },
-  { title: 'TypeScript 类型体操入门', href: '#' },
-  { title: 'SCSS 高级用法指南', href: '#' },
-  { title: 'Vite 构建优化技巧', href: '#' },
-  { title: '响应式设计最佳实践', href: '#' },
-  { title: '前端性能优化备忘录', href: '#' },
+  { title: 'Vue3 Composition API 入门指南', id: 'vue3-composition-api' },
+  { title: 'TypeScript 实用技巧', id: 'typescript-tips' },
+  { title: 'SCSS 最佳实践指南', id: 'scss-best-practices' },
 ]
 
 // 示例歌曲列表
@@ -72,15 +69,15 @@ function openDialog() {
         <h3>最新文章</h3>
         <ul>
           <li v-for="(art, idx) in articles" :key="idx">
-            <a :href="art.href">{{ art.title }}</a>
+            <RouterLink :to="`/article/${art.id}`">{{ art.title }}</RouterLink>
           </li>
         </ul>
 
         <h3>技术专栏</h3>
         <ul>
-          <li><a href="#">Vue3 Composition API</a></li>
-          <li><a href="#">TypeScript 泛型</a></li>
-          <li><a href="#">CSS 动画</a></li>
+          <li><RouterLink to="/article/vue3-composition-api">Vue3 Composition API</RouterLink></li>
+          <li><RouterLink to="/article/typescript-tips">TypeScript 泛型</RouterLink></li>
+          <li><RouterLink to="/article/scss-best-practices">CSS 动画</RouterLink></li>
         </ul>
 
         <h3>开发笔记</h3>

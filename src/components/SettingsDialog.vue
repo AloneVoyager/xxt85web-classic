@@ -49,6 +49,8 @@ function saveSettings() {
   close()
 }
 
+const baseUrl = import.meta.env.BASE_URL
+
 function applyBackground(index: number) {
   const backgrounds = [
     'background.webp',
@@ -62,10 +64,10 @@ function applyBackground(index: number) {
   body.style.transition = 'background-image 0.5s ease-in-out'
 
   if (index >= 0 && index < backgrounds.length) {
-    body.style.background = `url('/${backgrounds[index]}') no-repeat center center fixed`
+    body.style.background = `url('${baseUrl}${backgrounds[index]}') no-repeat center center fixed`
     body.style.backgroundSize = 'cover'
   } else {
-    body.style.background = 'url("/background.webp") no-repeat center center fixed'
+    body.style.background = `url('${baseUrl}background.webp') no-repeat center center fixed`
     body.style.backgroundSize = 'cover'
   }
 }
